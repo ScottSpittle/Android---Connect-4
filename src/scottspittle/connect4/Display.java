@@ -88,7 +88,7 @@ public class Display extends View
 		paint.setTextSize(50);
 		paint.setColor(Color.BLACK);
 		
-		text = info.getWhosTurn() == info.P1_CELL ? "Player 1" : "Player 2";
+		text = info.getWhosTurn() == info.P1_CELL ? "Player 1" : "Player 2"; //display player turn.
 		
 		text += "'s turn";
 		canvas.drawText(text, hw + (hw / 2), (padding * 2) - paint.getFontMetrics().ascent, paint);
