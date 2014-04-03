@@ -44,7 +44,7 @@ public class Display extends View
 		
 		Paint paint = new Paint();
 		
-		paint.setColor(Color.WHITE);
+		paint.setColor(Color.rgb(204, 204, 204));
 		paint.setStyle(Paint.Style.FILL_AND_STROKE);
 		paint.setStrokeWidth(1);
 		canvas.drawRect(0, 0, width, height, paint);
@@ -63,10 +63,10 @@ public class Display extends View
 				case Main.EMPTY_CELL:
 					paint.setColor(Color.YELLOW);
 					break;
-				case Main.P1_CELL:
+				case Main.P1:
 					paint.setColor(Color.RED);
 					break;
-				case Main.P2_CELL:
+				case Main.P2:
 					paint.setColor(Color.BLUE);
 					break;
 				}
@@ -88,7 +88,7 @@ public class Display extends View
 		paint.setTextSize(50);
 		paint.setColor(Color.BLACK);
 		
-		text = info.getWhosTurn() == info.P1_CELL ? "Player 1" : "Player 2"; //display player turn.
+		text = info.getWhosTurn() == info.player1.getCell() ? info.player1.getName() : info.player2.getName(); //display player turn.
 		
 		text += "'s turn";
 		canvas.drawText(text, hw + (hw / 2), (padding * 2) - paint.getFontMetrics().ascent, paint);
