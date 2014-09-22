@@ -7,12 +7,10 @@ public class Main {
 	public static final int BOARD_HEIGHT = 6;
 	
 	public static final byte EMPTY_CELL = 0;
-	public static final byte P1 = 1;
-	public static final byte P2 = 2;
-	public Player player1 = new Player("Scott Spittle", (byte) 1);
-	public Player player2 = new Player("Josh Boyce", (byte) 2);
+	public static final byte P1_CELL = 1;
+	public static final byte P2_CELL = 2;
 	
-	private byte playerTurn = (byte) 1;
+	private byte playerTurn = P1_CELL;
 	private byte playerWinner = EMPTY_CELL;
 	private static final int WIN_SCORE = 4;
 	
@@ -49,7 +47,7 @@ public class Main {
 		if(won)
 			playerWinner = playerTurn;
 		else
-			playerTurn = playerTurn == player1.getCell() ? player1.getCell() : player2.getCell();
+			playerTurn = playerTurn == P1_CELL ? P2_CELL : P1_CELL;
 		
 		return;
 	}
